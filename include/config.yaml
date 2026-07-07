@@ -1,0 +1,9 @@
+s3:
+  bucket: data-warehouse-course-l1
+  raw_prefix: course-project/
+  processed_bucket: your-processed-bucket
+  processed_prefix: processed/
+
+files:
+  sales: sales_data.csv
+  products: products_data.csv

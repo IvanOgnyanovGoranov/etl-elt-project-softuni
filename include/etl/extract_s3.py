@@ -7,9 +7,8 @@ load_dotenv()
 AWS_KEY = os.getenv("AWS_KEY")
 AWS_SECRET = os.getenv("AWS_SECRET")
 
-print("KEY:", AWS_KEY)
-print("SECRET starts with:", AWS_SECRET[:4] if AWS_SECRET else None)
+sales_data_df = pd.read_csv("s3://data-warehouse-course-l1/course-project/sales_data.csv", storage_options={"key": AWS_KEY, "secret": AWS_SECRET})
+product_data_df = pd.read_json("s3://data-warehouse-course-l1/course-project/product_data.json", storage_options={"key": AWS_KEY, "secret": AWS_SECRET})
 
-product_df = pd.read_csv("s3://data-warehouse-course-l1/course-project/sales_data.csv", storage_options={"key": AWS_KEY, "secret": AWS_SECRET})
-
-print(product_df.head())
+print(sales_data_df.head())
+print(product_data_df.head())
