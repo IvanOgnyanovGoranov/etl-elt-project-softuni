@@ -21,6 +21,7 @@ S3 = boto3.client(
     aws_secret_access_key=AWS_SECRET
 )
 
+# Add try except block for both functions
 def extract_csv(bucket: str, full_path: str) -> pd.DataFrame:
     """Fetch a CSV object from S3 and load it into a DataFrame."""
     csv_object = S3.get_object(Bucket=bucket, Key=full_path)
@@ -47,5 +48,5 @@ product_data_df = extract_json(
 )
 
 if __name__ == "__main__":
-    print(sales_data_df.head())
-    print(product_data_df.head())
+    print(sales_data_df.info())
+    print(product_data_df.info())

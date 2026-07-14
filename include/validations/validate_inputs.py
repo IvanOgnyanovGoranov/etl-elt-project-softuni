@@ -4,8 +4,7 @@ import pandas as pd
 from pandera.errors import SchemaErrors
 from include.validations.input_schemas import sales_schema, product_schema
 
-# --- Logger setup ---
-os.makedirs("logs", exist_ok=True)  # creates logs/ folder if it doesn't exist yet
+os.makedirs("logs", exist_ok=True)
 
 logging.basicConfig(
     filename="logs/validation.log",
