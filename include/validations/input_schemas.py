@@ -1,7 +1,7 @@
 import pandera as pa
 from pandera import DataFrameSchema, Column, Check
 
-sales_schema = DataFrameSchema(
+input_sales_schema = DataFrameSchema(
     {
         "sales id": Column(int, checks=Check.gt(0), nullable=False),
         "proDuct Id": Column(int, checks=Check.gt(0), nullable=False),
@@ -15,7 +15,7 @@ sales_schema = DataFrameSchema(
     strict=True,
 )
 
-product_schema = DataFrameSchema(
+input_product_schema = DataFrameSchema(
     {
         "product_id": Column(int, checks=Check.gt(0), nullable=False),
         "category": Column(str, nullable=False),
