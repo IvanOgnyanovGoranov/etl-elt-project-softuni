@@ -1,5 +1,6 @@
 s3:
   bucket: data-warehouse-course-l1
   raw_prefix: course-project/
+  processed_prefix: processed/
   sales_file: sales_data.csv
   products_file: product_data.json
